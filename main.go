@@ -1,12 +1,14 @@
 package main
 
 import (
-	"io"
+	//"io"
 	"net/http"
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "Hello world!")
+	//io.WriteString(w, "Hello world!")
+	http.NotFound(w, r)
+	return "", errors.New("Invalid Page Title")
 }
 
 func main() {
